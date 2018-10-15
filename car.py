@@ -6,7 +6,7 @@ class Car():
 		self.make = make
 		self.model = model
 		self.year = year
-		self.odometer_reading = 0
+		self.__odometer_reading = 0
 	def get_descriptive_name(self):
 		"""返回整洁的描述性名称"""
 		long_name = str(self.year) + ' ' + self.make + ' ' + self.model
@@ -53,3 +53,8 @@ class ElectricCar(Car):
 		"""
 		super().__init__(make, model, year)
 		self.battery = Battery()
+
+my_car = Car('BMW','X6',2018)
+my_car.odometer_reading = 200
+print(my_car.read_odometer())
+print(my_car._Car__odometer_reading)
